@@ -142,3 +142,52 @@ function getBooks() {
 function getBook(id) {
   return data.find((d) => d.id === id);
 }
+
+// //Destrcucturing
+
+// const book = getBook(1);
+
+// // const title = book.title;
+// // const author = book.author;
+
+// const { title, author, pages, publicationDate, genres, hasMovieAdaptation } =
+//   book;
+// const [primaryGenre, secondGenre, ...otherGenres] = genres;
+
+// console.log(genres);
+
+// console.log(otherGenres);
+
+const books = getBooks();
+
+const multiply = [1, 2, 3, 4, 5].map((el) => el * 2);
+
+console.log(multiply);
+
+const titles = books.map((book) => book.title);
+
+titles;
+
+const essentialData = books.map((book) => ({
+  title: book.title,
+  author: book.author,
+}));
+
+essentialData;
+
+const longBooks = books.filter((book) => book.pages > 500);
+
+longBooks;
+
+const pagesAllBooks = books.reduce((acc, book) => {
+  return acc + book.pages;
+}, 0);
+
+console.log(pagesAllBooks);
+
+const y = [3, 1, 2, 5, 7];
+
+const sorted = y.sort((a, b) => a - b);
+
+console.log(sorted);
+y;
